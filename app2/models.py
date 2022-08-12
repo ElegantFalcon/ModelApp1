@@ -7,3 +7,4 @@ class CustomerData(models.Model):  #class Model is called from models (check pac
     dob = models.DateField()
     email = models.CharField(max_length= 100)
     product = models.CharField(max_length= 100)
+    dop = models.DateField() #date of purchase
