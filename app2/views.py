@@ -9,7 +9,8 @@ from app2.serializers import CSerializer
 # Create your views here.
 @csrf_exempt
 def cust_details(request, id = 0):
-    if request.method == 'POST' :
+
+    if request.method == 'POST' :  # api post method
         cust_details = JSONParser().parse(request)
         Customserializer = CSerializer(data = cust_details)
         if Customserializer.is_valid():
@@ -18,13 +19,13 @@ def cust_details(request, id = 0):
         else :
             return JsonResponse({"status" : "failed" , "data" : Customserializer.errors})
 
-    elif request.method == 'GET' :
+    elif request.method == 'GET' :    # api get method
         products = CustomerData.objects.all()  
 
         Customserializer = CSerializer(products, many = True)
         return JsonResponse({"data": Customserializer.data})
     
-    elif request.method == 'PUT' :
+    elif request.method == 'PUT' :   # api put method
         products = JSONParser().parse(request)
         productsData = CustomerData.objects.get(id = products['id'])
         cu_sel = CSerializer(productsData, products  )
@@ -35,7 +36,7 @@ def cust_details(request, id = 0):
             return JsonResponse({"status" : "couldnt update data" , "data" : cu_sel.errors})
 
 
-    elif request.method == 'DELETE' :
+    elif request.method == 'DELETE' :     # api delete method
         products = JSONParser().parse(request)
         productsData = CustomerData.objects.filter(id = products['id'])
         productsData.delete()
