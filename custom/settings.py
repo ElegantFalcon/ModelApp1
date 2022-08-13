@@ -75,16 +75,28 @@ WSGI_APPLICATION = 'custom.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'custom_details',
-        'USER' : 'postgres',
-        'PASSWORD' : 'STRANGE',
-        'HOST' : 'localhost' , 
+        'NAME': 'd5g2sv5mrs632p',
+        'USER' : 'lpinhtvaphgjsd',
+        'PASSWORD' : '7356cfa4811709586fafee1dd44d133495aba127b85ca2fd3a5fbce33d322914',
+        'HOST' : 'ec2-3-225-110-188.compute-1.amazonaws.com' , 
         'PORT' : '5432' ,
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'custom_details',
+#         'USER' : 'postgres',
+#         'PASSWORD' : 'STRANGE',
+#         'HOST' : 'localhost' , 
+#         'PORT' : '5432' ,
+#     }
+# }
 
 
 # Password validation
